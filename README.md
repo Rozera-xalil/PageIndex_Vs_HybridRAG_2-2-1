@@ -13,6 +13,16 @@
 
 <br/>
 
+
+## 🖼️ Demo Preview
+
+![Demo](assets/compare.png)
+
+![Demo](assets/pageindex.png)
+
+
+
+
 A hands-on comparison of two RAG strategies on a real-world structured document —  
 revealing **when vector math fails** and **why reasoning wins**.
 

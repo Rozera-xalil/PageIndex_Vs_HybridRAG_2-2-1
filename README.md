@@ -75,7 +75,7 @@ Chosen because it's a **deeply hierarchical, structured document** — the exact
 
 **Test query:** *"How is patient data encrypted?"*
 
-### 🔵 Classic RAG Result
+### 🔵 Hybrid RAG Result
 - Retrieves **3 overlapping chunks** using cosine similarity  
 - Some chunks contain irrelevant content (noise)  
 - Answer quality depends on luck of the chunk boundary

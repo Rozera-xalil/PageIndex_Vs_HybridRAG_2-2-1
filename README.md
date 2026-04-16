@@ -14,11 +14,11 @@
 <br/>
 
 
-## 🖼️ Demo Preview
-
-![Demo](assets/compare.png)
-
-![Demo](assets/pageindex.png)
+## 🖼️ See It In Action
+<p align="center">
+  <img src="assets/compare.png" width="45%" />
+  <img src="assets/pageindex.png" width="45%" />
+</p>
 
 
 
@@ -31,6 +31,37 @@ revealing **when vector math fails** and **why reasoning wins**.
 </div>
 
 ---
+
+
+## ⚡ Quick Example: Noise vs Precision
+
+**Query:** "How is patient data encrypted?"
+
+🔵 Classic RAG:
+- Retrieves unrelated chunks (architecture, authentication...)
+- Misses the exact section
+
+🟢 PageIndex:
+- Navigates to Section 3.1 — Data Encryption
+- → AES-256 + TLS 1.3
+
+✅ Zero noise, exact match
+
+---
+
+## 📄 About the Data
+
+The document used is a simulated **Hospital Management System (SRS)**.
+
+It was specifically chosen because:
+- It has a **clear hierarchical structure**
+- Contains **chapters and sections**
+- Represents real-world **technical documentation**
+
+👉 This is exactly where Classic RAG struggles  
+👉 And where PageIndex shines
+
+
 
 ## 🎯 What This Project Is About
 

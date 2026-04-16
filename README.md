@@ -108,7 +108,7 @@ Chosen because it's a **deeply hierarchical, structured document** — the exact
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/rag-vs-pageindex
+git clone https://github.com/Rozera-xalil/PageIndex_Vs_HybridRAG_2-2-1
 cd rag-vs-pageindex
 pip install faiss-cpu sentence-transformers numpy requests
 ```

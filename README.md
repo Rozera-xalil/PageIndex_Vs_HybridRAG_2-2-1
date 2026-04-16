@@ -13,16 +13,6 @@
 
 <br/>
 
-
-## 🖼️ See It In Action
-<p align="center">
-  <img src="assets/compare.png" width="45%" />
-  <img src="assets/pageindex.png" width="45%" />
-</p>
-
-
-
-
 A hands-on comparison of two RAG strategies on a real-world structured document —  
 revealing **when vector math fails** and **why reasoning wins**.
 
@@ -32,36 +22,30 @@ revealing **when vector math fails** and **why reasoning wins**.
 
 ---
 
+## 🖼️ See It In Action
+
+<p align="center">
+  <img src="assets/compare.png" width="45%" />
+  <img src="assets/pageindex.png" width="45%" />
+</p>
+
+---
 
 ## ⚡ Quick Example: Noise vs Precision
 
-**Query:** "How is patient data encrypted?"
+**Query:** *"How is patient data encrypted?"*
 
-🔵 Classic RAG:
+🔵 **Classic RAG:**
 - Retrieves unrelated chunks (architecture, authentication...)
 - Misses the exact section
 
-🟢 PageIndex:
-- Navigates to Section 3.1 — Data Encryption
+🟢 **PageIndex:**
+- Navigates directly to Section 3.1 — Data Encryption
 - → AES-256 + TLS 1.3
 
 ✅ Zero noise, exact match
 
 ---
-
-## 📄 About the Data
-
-The document used is a simulated **Hospital Management System (SRS)**.
-
-It was specifically chosen because:
-- It has a **clear hierarchical structure**
-- Contains **chapters and sections**
-- Represents real-world **technical documentation**
-
-👉 This is exactly where Classic RAG struggles  
-👉 And where PageIndex shines
-
-
 
 ## 🎯 What This Project Is About
 
@@ -80,12 +64,27 @@ This notebook runs **two retrieval pipelines side-by-side** on the same document
 
 ---
 
-
 ## 🚨 Why This Matters
 
 Most RAG systems in production fail on structured documents because they rely purely on semantic similarity.
 
-This project demonstrates a simple but powerful alternative: reasoning over structure instead of matching text.
+This project demonstrates a simple but powerful alternative: **reasoning over structure** instead of matching text.
+
+---
+
+## 📄 About the Data
+
+The document used is a simulated **Hospital Management System (SRS)**.
+
+It was specifically chosen because:
+- It has a **clear hierarchical structure**
+- Contains **chapters and sections**
+- Represents real-world **technical documentation**
+
+👉 This is exactly where Classic RAG struggles  
+👉 And where PageIndex shines
+
+---
 
 ## 🏗️ Architecture Overview
 
@@ -123,14 +122,14 @@ Chosen because it's a **deeply hierarchical, structured document** — the exact
 
 **Test query:** *"How is patient data encrypted?"*
 
-### 🔵 Hybrid RAG Result
-- Retrieves **3 overlapping chunks** using cosine similarity  
-- Some chunks contain irrelevant content (noise)  
+### 🔵 Classic RAG Result
+- Retrieves **3 overlapping chunks** using cosine similarity
+- Some chunks contain irrelevant content (noise)
 - Answer quality depends on luck of the chunk boundary
 
 ### 🟢 PageIndex RAG Result
-- Navigates the document tree using **LLM reasoning**  
-- Arrives directly at `Section 3.1: Data Encryption`  
+- Navigates the document tree using **LLM reasoning**
+- Arrives directly at `Section 3.1: Data Encryption`
 - Zero noise — one section, one precise answer
 
 ---
@@ -201,25 +200,25 @@ jupyter notebook RAG_vs_PageIndex_Groq.ipynb
 ## 💡 When To Use Each
 
 ### 🔵 Classic RAG — Use when:
-- Building **general-purpose chatbots** or FAQ systems  
-- Working with **unstructured text corpora**  
-- Documents are **short** with no clear hierarchy  
-- Wikipedia-style or web-scraped content  
+- Building **general-purpose chatbots** or FAQ systems
+- Working with **unstructured text corpora**
+- Documents are **short** with no clear hierarchy
+- Wikipedia-style or web-scraped content
 
 ### 🟢 PageIndex RAG — Use when:
-- Working with **technical documentation** (SRS, API docs)  
-- Documents have a clear **chapter/section hierarchy**  
-- Dealing with **legal contracts** or **academic papers**  
-- **Precision and explainability** are critical  
+- Working with **technical documentation** (SRS, API docs)
+- Documents have a clear **chapter/section hierarchy**
+- Dealing with **legal contracts** or **academic papers**
+- **Precision and explainability** are critical
 
 ---
 
 ## 🔮 What's Next
 
-- [ ] **Multi-node reasoning** — handle cross-section questions  
-- [ ] **Auto tree extraction** — use Groq to build the tree from any document automatically  
-- [ ] **Hybrid approach** — combine vector search + tree navigation  
-- [ ] **Evaluation framework** — RAGAS metrics for precision/recall  
+- [ ] **Multi-node reasoning** — handle cross-section questions
+- [ ] **Auto tree extraction** — use Groq to build the tree from any document automatically
+- [ ] **Hybrid approach** — combine vector search + tree navigation
+- [ ] **Evaluation framework** — RAGAS metrics for precision/recall
 
 ---
 
@@ -241,7 +240,6 @@ AI Engineer · RAG Systems · LLM Applications · 2+2=1
 
 [![Medium](https://img.shields.io/badge/Medium-Follow-black?style=flat-square&logo=medium)](https://medium.com/@rozxalil801)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github)](https://github.com/Rozera-xalil)
-
 
 ---
 

@@ -39,6 +39,13 @@ This notebook runs **two retrieval pipelines side-by-side** on the same document
 
 ---
 
+
+## 🚨 Why This Matters
+
+Most RAG systems in production fail on structured documents because they rely purely on semantic similarity.
+
+This project demonstrates a simple but powerful alternative: reasoning over structure instead of matching text.
+
 ## 🏗️ Architecture Overview
 
 ```

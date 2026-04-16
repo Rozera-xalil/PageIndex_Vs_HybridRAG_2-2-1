@@ -1,4 +1,4 @@
-# 🧠 Classic RAG vs PageIndex: A Comparative Study
+# 🧠 Hybrid RAG vs PageIndex: A Comparative Study
 
 <div align="center">
 
@@ -35,7 +35,7 @@ revealing **when vector math fails** and **why reasoning wins**.
 
 **Query:** *"How is patient data encrypted?"*
 
-🔵 **Classic RAG:**
+🔵 **Hybrid RAG:**
 - Retrieves unrelated chunks (architecture, authentication...)
 - Misses the exact section
 
@@ -53,7 +53,7 @@ Most RAG tutorials stop at vector search. This one goes further.
 
 This notebook runs **two retrieval pipelines side-by-side** on the same document and the same question — then shows you exactly **why one wins and the other doesn't**.
 
-| | Classic RAG | PageIndex RAG |
+| | Hybrid RAG | PageIndex RAG |
 |:--|:--:|:--:|
 | **Core Idea** | Match by meaning | Navigate by structure |
 | **Mechanism** | Cosine similarity (FAISS) | LLM reasoning over a tree |
@@ -81,7 +81,7 @@ It was specifically chosen because:
 - Contains **chapters and sections**
 - Represents real-world **technical documentation**
 
-👉 This is exactly where Classic RAG struggles  
+👉 This is exactly where Hybrid RAG struggles  
 👉 And where PageIndex shines
 
 ---
@@ -93,7 +93,7 @@ It was specifically chosen because:
          │
    ┌─────┴──────┐
    ▼            ▼
-🔵 Classic RAG  🟢 PageIndex RAG
+🔵 Hybrid RAG  🟢 PageIndex RAG
    │            │
    ▼            ▼
 Chunking     Build Tree Index
@@ -118,11 +118,11 @@ Top-K Chunks    │
 ## 🔬 The Experiment
 
 **Document used:** A simulated Hospital Management System — Software Requirements Specification (SRS).  
-Chosen because it's a **deeply hierarchical, structured document** — the exact type that exposes Classic RAG's weaknesses.
+Chosen because it's a **deeply hierarchical, structured document** — the exact type that exposes Hybrid RAG's weaknesses.
 
 **Test query:** *"How is patient data encrypted?"*
 
-### 🔵 Classic RAG Result
+### 🔵 Hybrid RAG Result
 - Retrieves **3 overlapping chunks** using cosine similarity
 - Some chunks contain irrelevant content (noise)
 - Answer quality depends on luck of the chunk boundary
@@ -178,7 +178,7 @@ jupyter notebook RAG_vs_PageIndex_Groq.ipynb
 | **Step 2** | Imports & configuration |
 | **Step 3** | Production-grade Groq LLM client (retry logic, usage tracking) |
 | **Step 4** | Sample document — Hospital SRS |
-| **Step 5** | 🔵 Classic RAG pipeline (chunking → embeddings → FAISS → answer) |
+| **Step 5** | 🔵 Hybrid RAG pipeline (chunking → embeddings → FAISS → answer) |
 | **Step 6** | 🟢 PageIndex RAG pipeline (tree index → LLM navigation → answer) |
 | **Step 7** | Side-by-side evaluation on 4 test queries |
 | **Step 8** | Interactive SVG visualization of results |
@@ -188,7 +188,7 @@ jupyter notebook RAG_vs_PageIndex_Groq.ipynb
 
 ## 📊 Key Results
 
-| Query | Classic RAG | PageIndex RAG |
+| Query | Hybrid RAG | PageIndex RAG |
 |:--|:--:|:--:|
 | "How is patient data encrypted?" | ⚠️ Partial (noise included) | ✅ Exact (Sec 3.1) |
 | "What are the user roles?" | ⚠️ Mixed chunks | ✅ Exact (Sec 2.2) |
@@ -199,7 +199,7 @@ jupyter notebook RAG_vs_PageIndex_Groq.ipynb
 
 ## 💡 When To Use Each
 
-### 🔵 Classic RAG — Use when:
+### 🔵 Hybrid RAG — Use when:
 - Building **general-purpose chatbots** or FAQ systems
 - Working with **unstructured text corpora**
 - Documents are **short** with no clear hierarchy
@@ -226,7 +226,7 @@ jupyter notebook RAG_vs_PageIndex_Groq.ipynb
 
 This notebook is the companion code to the Medium article:
 
-> **"Classic RAG vs PageIndex: Why Your Vector Database Fails on Structured Documents"**  
+> **"Hybrid RAG vs PageIndex: Why Your Vector Database Fails on Structured Documents"**  
 > *by Rozêra Xelîl*
 
 [👉 Read it on Medium](#) ← *(link coming soon)*
